@@ -6,7 +6,19 @@
 <meta name="description" content="SteelGeens is an independent film and television production company founded by actor and writer Stephen Cromwell and production manager Gina Casey.">
 <style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
 <title>SteelGeens</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SteelGeens">
+<meta property="og:title" content="SteelGeens">
+<meta property="og:description" content="Independent film &amp; television production company founded by Stephen Cromwell and Gina Casey.">
+<meta property="og:url" content="https://steelgeens.com/">
+<meta property="og:image" content="https://steelgeens.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SteelGeens: film and television production">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3c4a58">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -110,6 +122,10 @@ section + section { border-top: 1px solid var(--line); }
 /* Contact */
 .contact { display: grid; gap: 16px; max-width: 40em; }
 .contact p { margin: 0; font-size: 19px; }
+.emails { display: flex; flex-wrap: wrap; gap: 16px 48px; padding-top: 8px; }
+.emails div { display: grid; gap: 4px; min-width: 0; }
+.emails a { font: 500 clamp(20px, 4vw, 26px)/1.2 var(--mono); text-decoration: none; overflow-wrap: anywhere; }
+.emails a:hover { text-decoration: underline; }
 
 footer { background: var(--steel); color: var(--on-steel); }
 footer .wrap { padding-block: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font: 13px var(--mono); }
@@ -234,7 +250,11 @@ footer .wrap { padding-block: 20px; display: flex; flex-wrap: wrap; justify-cont
     <div class="wrap contact">
       <span class="label">Get in touch</span>
       <h2 style="font-size:clamp(40px,7vw,64px);text-transform:uppercase">Got a project?</h2>
-      <p>We're open to scripts, co-productions and crew enquiries. Contact details are coming soon.</p>
+      <p>We're open to scripts, co-productions and crew enquiries.</p>
+      <div class="emails">
+        <div><span class="label">Stephen Cromwell</span><a href="mailto:ste@steelgeens.com">ste@steelgeens.com</a></div>
+        <div><span class="label">Gina Casey</span><a href="mailto:gina@steelgeens.com">gina@steelgeens.com</a></div>
+      </div>
     </div>
   </section>
 </main>

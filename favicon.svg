@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><clipPath id="c"><rect x="4" y="4" width="56" height="18"/></clipPath></defs>
+  <rect width="64" height="64" rx="12" fill="#3c4a58"/>
+  <g clip-path="url(#c)" fill="#f1f3f5">
+    <path d="M4 22 18 4h10L14 22z"/><path d="M24 22 38 4h10L34 22z"/><path d="M44 22 58 4h10L54 22z"/>
+  </g>
+  <text x="32" y="55" text-anchor="middle" font-family="Impact, 'Arial Narrow', sans-serif" font-size="30" font-weight="800" fill="#f1f3f5">S<tspan fill="#e8954a">G</tspan></text>
+</svg>
