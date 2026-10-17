@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="SteelGeens is an independent film and television production company founded by actor and writer Stephen Cromwell and production manager Gina Casey.">
+<style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
+<title>SteelGeens</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a production slate up top, then two "call sheet" crew cards, then an end-credits roll of past work. */
+:root {
+  --bg: #eef0f2;
+  --surface: #ffffff;
+  --fg: #1b2026;
+  --muted: #5a6470;
+  --line: #c9cfd6;
+  --steel: #3c4a58;
+  --accent: #b5651d;       /* tungsten-lamp amber */
+  --on-steel: #f1f3f5;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161b; --surface: #1a2027; --fg: #e6e9ec; --muted: #98a3ae;
+    --line: #2d3640; --steel: #2a3541; --accent: #e8954a; --on-steel: #e6e9ec;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12161b; --surface: #1a2027; --fg: #e6e9ec; --muted: #98a3ae;
+  --line: #2d3640; --steel: #2a3541; --accent: #e8954a; --on-steel: #e6e9ec;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 16px/1.6 var(--body);
+}
+.wrap {
+  max-width: 1040px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; text-wrap: balance; margin: 0; line-height: 1; }
+.label { font: 500 12px/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+/* Slate header */
+.slate { background: var(--steel); color: var(--on-steel); }
+.sticks {
+  height: 22px;
+  background: repeating-linear-gradient(-45deg, var(--on-steel) 0 22px, var(--steel) 22px 44px);
+  opacity: .9;
+}
+.slate .wrap { padding-block: 48px 40px; display: grid; gap: 28px; }
+.slate h1 { font-size: clamp(64px, 14vw, 156px); letter-spacing: .01em; text-transform: uppercase; }
+.slate h1 span { color: var(--accent); }
+.slate p.lede { max-width: 34em; font-size: 19px; margin: 0; opacity: .92; }
+.slate-grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid color-mix(in srgb, var(--on-steel) 30%, transparent);
+}
+.slate-grid div { padding: 12px 12px 0 0; display: grid; gap: 2px; }
+.slate-grid .label { color: color-mix(in srgb, var(--on-steel) 65%, transparent); }
+.slate-grid strong { font: 500 15px/1.3 var(--mono); }
+
+section { padding-block: 64px; }
+section + section { border-top: 1px solid var(--line); }
+.section-head { display: grid; gap: 8px; margin-bottom: 32px; }
+.section-head h2 { font-size: clamp(40px, 7vw, 64px); text-transform: uppercase; }
+
+/* What we do */
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.services div { display: grid; gap: 8px; align-content: start; }
+.services h3 { font-size: 28px; text-transform: uppercase; color: var(--accent); }
+.services p { margin: 0; color: var(--muted); max-width: 30em; }
+
+/* Crew cards */
+.crew { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line);
+  padding: 28px; display: grid; gap: 16px; align-content: start; min-width: 0;
+}
+.card h3 { font-size: 44px; text-transform: uppercase; }
+.card .role { font: 500 13px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.card p { margin: 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 24px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.stats div { display: grid; }
+.stats strong { font: 800 36px/1 var(--display); font-variant-numeric: tabular-nums; }
+.card .imdb { font: 500 13px var(--mono); }
+
+/* End credits */
+.credits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
+.roll { display: grid; gap: 4px; align-content: start; min-width: 0; }
+.roll h3 { font-size: 22px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; color: var(--muted); }
+.row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px;
+  padding-block: 8px; border-bottom: 1px solid var(--line);
+}
+.row b { font-weight: 500; }
+.row small { display: block; color: var(--muted); font-size: 14px; }
+.row time { font: 400 14px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* Contact */
+.contact { display: grid; gap: 16px; max-width: 40em; }
+.contact p { margin: 0; font-size: 19px; }
+
+footer { background: var(--steel); color: var(--on-steel); }
+footer .wrap { padding-block: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font: 13px var(--mono); }
+
+@media (max-width: 760px) {
+  .services, .crew, .credits { grid-template-columns: 1fr; }
+  .slate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 12px; }
+  section { padding-block: 48px; }
+}
+</style>
+</head>
+<body>
+
+<header class="slate">
+  <div class="sticks" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="label" style="color:inherit;opacity:.7">Film &amp; television production</span>
+    <h1>Steel<span>Geens</span></h1>
+    <p class="lede">An independent production company built by people who work on set every day: one in front of the camera, one keeping the whole production moving behind it.</p>
+    <div class="slate-grid">
+      <div><span class="label">Production</span><strong>SteelGeens</strong></div>
+      <div><span class="label">Founders</span><strong>Cromwell / Casey</strong></div>
+      <div><span class="label">Screen credits</span><strong>40+</strong></div>
+      <div><span class="label">Take</span><strong>01</strong></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">What we do</span>
+        <h2>From script to screen</h2>
+      </div>
+      <div class="services">
+        <div>
+          <h3>Develop</h3>
+          <p>Original stories for film and television, written and shaped by a team that knows how an idea plays once it reaches the floor.</p>
+        </div>
+        <div>
+          <h3>Produce</h3>
+          <p>Schedules, crews, locations and budgets, run by someone who has coordinated drama series, features and international co-productions.</p>
+        </div>
+        <div>
+          <h3>Perform</h3>
+          <p>Casting and on-screen talent with long-running series experience, from soap to crime drama to period epics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Call sheet</span>
+        <h2>The founders</h2>
+      </div>
+      <div class="crew">
+        <article class="card">
+          <span class="role">Actor · Writer · Producer</span>
+          <h3>Stephen Cromwell</h3>
+          <p>Best known as Keith Kiely across 85 episodes of the drama <i>Red Rock</i>. His screen work runs from <i>Vikings</i> and <i>FBI: International</i> to <i>Harry Wild</i>, the comedy feature <i>Halal Daddy</i> and the horror film <i>The Devil's Woods</i>.</p>
+          <div class="stats">
+            <div><strong>29</strong><span class="label">Acting credits</span></div>
+            <div><strong>2010–now</strong><span class="label">Years on set</span></div>
+          </div>
+          <a class="imdb" href="https://www.imdb.com/name/nm5168186/" target="_blank" rel="noopener">IMDb profile →</a>
+        </article>
+        <article class="card">
+          <span class="role">Producer · Production management</span>
+          <h3>Gina Casey</h3>
+          <p>Production coordinator on drama series and features including <i>Sherlock &amp; Daughter</i>, <i>Bloodlands</i>, <i>Harry Wild</i> and <i>Silver and the Book of Dreams</i>, with production management on the feature <i>Boys from County Hell</i>.</p>
+          <div class="stats">
+            <div><strong>12</strong><span class="label">Production credits</span></div>
+            <div><strong>2020–now</strong><span class="label">Years on set</span></div>
+          </div>
+          <a class="imdb" href="https://www.imdb.com/name/nm10663965/" target="_blank" rel="noopener">IMDb profile →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Selected credits</span>
+        <h2>Where we've worked</h2>
+      </div>
+      <div class="credits">
+        <div class="roll">
+          <h3>Stephen Cromwell</h3>
+          <div class="row"><span><b>Witness Number 3</b><small>TV series · Tyler Osho</small></span><time>2022</time></div>
+          <div class="row"><span><b>Harry Wild</b><small>TV series · Dean Kavanagh</small></span><time>2022</time></div>
+          <div class="row"><span><b>FBI: International</b><small>TV series · Police Tech</small></span><time>2022</time></div>
+          <div class="row"><span><b>State of Flux</b><small>TV mini series · Daniel O'Rourke</small></span><time>2022</time></div>
+          <div class="row"><span><b>Vikings</b><small>TV series · Kattegonian</small></span><time>2020</time></div>
+          <div class="row"><span><b>Red Rock</b><small>TV series · Keith Kiely, 85 episodes</small></span><time>2015–20</time></div>
+          <div class="row"><span><b>Damo &amp; Ivor: The Movie</b><small>Feature · Francis</small></span><time>2018</time></div>
+          <div class="row"><span><b>Halal Daddy</b><small>Feature · Derek</small></span><time>2017</time></div>
+          <div class="row"><span><b>A Date for Mad Mary</b><small>Feature</small></span><time>2016</time></div>
+          <div class="row"><span><b>The Devil's Woods</b><small>Feature · Keith; also writer and producer</small></span><time>2015</time></div>
+        </div>
+        <div class="roll">
+          <h3>Gina Casey</h3>
+          <div class="row"><span><b>Sherlock &amp; Daughter</b><small>TV series · Production coordinator</small></span><time>2025</time></div>
+          <div class="row"><span><b>Kathleen Is Here</b><small>Feature · Production coordinator</small></span><time>2024</time></div>
+          <div class="row"><span><b>Silver and the Book of Dreams</b><small>Feature · Production coordinator</small></span><time>2023</time></div>
+          <div class="row"><span><b>Bloodlands</b><small>TV series · Production coordinator</small></span><time>2022</time></div>
+          <div class="row"><span><b>Harry Wild</b><small>TV series · Production coordinator</small></span><time>2022</time></div>
+          <div class="row"><span><b>Der Irland-Krimi</b><small>TV series · Production coordinator</small></span><time>2022</time></div>
+          <div class="row"><span><b>The Cellar</b><small>Feature · Production coordinator</small></span><time>2022</time></div>
+          <div class="row"><span><b>The Peppercorns and the Secret of the Deep Sea</b><small>Feature · Production coordinator, Northern Ireland</small></span><time>2020</time></div>
+          <div class="row"><span><b>My Left Nut</b><small>TV series · Production coordinator</small></span><time>2020</time></div>
+          <div class="row"><span><b>Boys from County Hell</b><small>Feature · Production management</small></span><time>2020</time></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact">
+      <span class="label">Get in touch</span>
+      <h2 style="font-size:clamp(40px,7vw,64px);text-transform:uppercase">Got a project?</h2>
+      <p>We're open to scripts, co-productions and crew enquiries. Contact details are coming soon.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SteelGeens</span>
+    <span>Credits sourced from IMDb</span>
+  </div>
+</footer>
+</body>
+</html>
